@@ -2,25 +2,38 @@ const { FusesPlugin } = require("@electron-forge/plugin-fuses");
 const { FuseV1Options, FuseVersion } = require("@electron/fuses");
 
 module.exports = {
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          owner: "mlangumier",
+          name: "electronjs-tutorial",
+        },
+        prerelease: false,
+        draft: true,
+      },
+    },
+  ],
   packagerConfig: {
     asar: true,
   },
   rebuildConfig: {},
   //* MacOS code signing
-  osxSign: {},
-  osxNoratize: {
-    tool: "notarytool",
-    appleId: process.env.APPLE_ID,
-    appleIdPassword: process.env.APPLe_PASSWORD,
-    teamId: process.env.APPLE_TEAM_ID,
-  },
+  // osxSign: {},
+  // osxNoratize: {
+  //   tool: "notarytool",
+  //   appleId: process.env.APPLE_ID,
+  //   appleIdPassword: process.env.APPLe_PASSWORD,
+  //   teamId: process.env.APPLE_TEAM_ID,
+  // },
   makers: [
     {
       name: "@electron-forge/maker-squirrel",
       config: {
         //* Windows code signing
-        certificateFile: "./cert.pfx",
-        certificatePassword: process.env.CERTIFICATE_PASSWORD,
+        // certificateFile: "./cert.pfx",
+        // certificatePassword: process.env.CERTIFICATE_PASSWORD,
       },
     },
     {

@@ -30,3 +30,11 @@ On Linux, find the installer in project folder: `/out/make/dev/x64/tutorial-elec
 ## Publishing and Updating
 
 [Guide](https://www.electronjs.org/docs/latest/tutorial/tutorial-publishing-updating)
+
+Need special configuration & setup for deployment on Windows & MacOS. For this, see automated workflow for Github Actions (auto-build & publish for all OS).
+
+TODO:
+
+- Check Github Apps
+- Check Github actions (+ workflow)
+- Setup auto-deploy
